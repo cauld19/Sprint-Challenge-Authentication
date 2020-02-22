@@ -20,7 +20,7 @@ router.post('/register', validateUser, (req, res) => {
                 res.status(201).json({user: user, token: token});
             })
             .catch(err => {
-                res.status(500).json(err.message);
+                res.status(500).json(err);
             })
 });
 
