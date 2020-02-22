@@ -1,5 +1,5 @@
-const server = require('../api/server')
-const request = require('supertest')
+const server = require('../api/server');
+const request = require('supertest');
 
 describe('server.js', () => {
     it('should set testing enviornment', () => {
@@ -13,13 +13,9 @@ describe('server.js', () => {
         });
     })
 
-    // it('should be json', async () => {
-    //     const res = await request(server).get('/');
-    //     expect(res.type).toBe('application/json');
-    // })
+    it('should be json', async () => {
+        const res = await request(server).get('/api/jokes');
+        expect(res.type).toBe('application/json');
+    })
 
-    // it('should return the right object', async () => {
-    //     const res = await request(server).get('/');
-    //     expect(res.body).toEqual({ api: 'up' });
-    // })
 })
