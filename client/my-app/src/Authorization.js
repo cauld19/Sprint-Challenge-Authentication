@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = e => {
         e.preventDefault();
         axios
-            .post("https://localhost:3300/api/auth/register", signupCredentials)
+            .post("http://localhost:3300/api/auth/register", signupCredentials)
             .then(res => {
               console.log(res);
               resetField();
@@ -77,7 +77,7 @@ const Signup = () => {
               <button>SignUp</button>
           </form>
           {error ? <div className="error-message">
-                <p>Incorrect Signup. Please input a valid username, password, and email.</p>
+                <p>Incorrect Signup. Please input a valid username, password.</p>
           </div> : null }
           {successSignup ? <div className="error-message">
                 <p>Successfull registration. Please Login above.</p>
