@@ -1,7 +1,10 @@
 import React from 'react';
 
-import Authorization from "./Authorization"
-import Login from "./Login";
+import { Route, Switch } from 'react-router-dom';
+
+import {Authorization} from "./Authorization";
+
+import Jokes from "./Jokes"
 
 
 
@@ -9,8 +12,13 @@ import Login from "./Login";
 function App() {
   return (
     <div className="App">
-      <Login />
-      <Authorization />
+      <Switch>
+        <Route exact path='/' component={Authorization}/>
+
+        <Route exact path='/jokes' component={Jokes} />
+
+      </Switch>
+     
 
     </div>
   );
